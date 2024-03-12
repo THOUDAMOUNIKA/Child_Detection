@@ -104,7 +104,7 @@ def detect_age_gender(image):
         age = int(np.round(pred[1][0].item()))
         gender = "Male" if np.round(pred[0][0].item()) == 0 else "Female"
         category = "Child" if age <= 18 else "Adult"
-        return age, gender, category
+        return category
     except Exception as e:
         return None, None, None
 
