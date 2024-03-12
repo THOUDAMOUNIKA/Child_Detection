@@ -118,9 +118,9 @@ def main():
         st.image(image, caption='Uploaded Image', use_column_width=True)
         category = detect_age_gender(image)
 
-        if age is not None:
-            st.write(f"Predicted Age: {age}")
-            st.write(f"Predicted Gender: {gender}")
+        if category is not None:
+            #st.write(f"Predicted Age: {age}")
+            #st.write(f"Predicted Gender: {gender}")
             st.write(f"Predicted Category: {category}")
 
 if __name__ == "__main__":
