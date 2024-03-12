@@ -106,7 +106,7 @@ def detect_age_gender(image):
         category = "Child" if age <= 18 else "Adult"
         return category
     except Exception as e:
-        return None, None, None
+        return None
 
 # Define Streamlit app
 def main():
@@ -116,7 +116,7 @@ def main():
     if uploaded_image is not None:
         image = Image.open(uploaded_image)
         st.image(image, caption='Uploaded Image', use_column_width=True)
-        age, gender, category = detect_age_gender(image)
+        category = detect_age_gender(image)
 
         if age is not None:
             st.write(f"Predicted Age: {age}")
